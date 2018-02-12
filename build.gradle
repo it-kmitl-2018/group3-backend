@@ -14,8 +14,8 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
-group = 'io.group3'
-version = '0.0.1-SNAPSHOT'
+group = 'th.ac.kmitl.it.soa.group3'
+version = '0.0.0'
 sourceCompatibility = 1.8
 
 repositories {
@@ -25,5 +25,7 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile("org.springframework.boot:spring-boot-devtools")
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

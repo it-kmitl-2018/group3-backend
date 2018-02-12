@@ -1,7 +1,6 @@
-package io.group3.backend.controller;
+package th.ac.kmitl.it.soa.group3.controller;
 
-import com.sun.jndi.toolkit.ctx.AtomicContext;
-import io.group3.backend.model.Greeting;
+import th.ac.kmitl.it.soa.group3.model.Greeting;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
-public class Hello {
+public class HelloController {
 
     private AtomicInteger counter = new AtomicInteger();
 

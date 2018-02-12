@@ -1,4 +1,4 @@
-package io.group3.backend;
+package th.ac.kmitl.it.soa.group3;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,8 +9,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class EtaxBackendApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
+	// TODO
 
 }
