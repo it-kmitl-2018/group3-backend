@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -23,7 +22,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @Configuration
 @EnableSwagger2
-@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+@EnableAutoConfiguration(exclude = {
+        DataSourceAutoConfiguration.class,
+        DataSourceTransactionManagerAutoConfiguration.class,
+        HibernateJpaAutoConfiguration.class
+})
 public class EtaxBackendApplication {
 
     public static void main(String[] args) {
@@ -46,7 +49,10 @@ public class EtaxBackendApplication {
                 "",
                 "Version 1",
                 "",
-                new Contact("SOA Group 3 - Backend", "", "https://github.com/it-kmitl-2018/group3-backend").toString(),
+                new Contact(
+                        "SOA Group 3 - Backend",
+                        "https://github.com/it-kmitl-2018/group3-backend",
+                        "").toString(),
                 "MIT License",
                 "https://opensource.org/licenses/MIT"
         );
