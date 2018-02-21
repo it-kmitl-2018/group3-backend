@@ -1,8 +1,6 @@
 # TEAM CONVENTION
 
-Our team convention is based on **Google Java Style Guide**. For anything that is not mention below please refer to https://google.github.io/styleguide/javaguide.html
-
-
+Our team convention is based on **[Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)**. Please refer to it for anything that is not mentioned below.
 
 ## Naming
 
@@ -19,7 +17,7 @@ Our team convention is based on **Google Java Style Guide**. For anything that i
 
 - One statement per line.120 column limit.
 
--  Indent continuation lines at least 8 spaces (from original).
+- Indent continuation lines at least 8 spaces (from original).
 
 - Egyptian brackets
 
@@ -28,7 +26,6 @@ Our team convention is based on **Google Java Style Guide**. For anything that i
   - Line break after the closing brace. (only terminate)
   - No line break before the opening brace.
 
-  ​
 
 ## Whitespace
 
@@ -46,12 +43,44 @@ Our team convention is based on **Google Java Style Guide**. For anything that i
 - Between the type and variable of a declaration
 
 
+## Versioning
 
-## Version Number
+Based on **[Semantic Versioning 2.0.0](https://semver.org/#semantic-versioning-200)**
 
 Given a version number **MAJOR.MINOR.PATCH**, increment the:
 
-- **MAJOR** version when you make incompatible changes
-- **MINOR** version when you add functionality in a backwards-compatible manner
-- **PATCH** version when you make backwards-compatible bug fixes.
+- **MAJOR** version when you make incompatible changes  
+- **MINOR** version when you add functionality in a backwards-compatible manner  
+- **PATCH** version when you make backwards-compatible bug fixes.  
 
+Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+
+## GIT commit message
+
+we will use the following tag for each commit.
+
+​	[**Task**] _**Commit message**_  
+
+**Example**
+
+​	[Add] Initial project
+
+### Task
+
+Start with upper letter in square bracket
+
+- **Add**   when you create new file or directory
+- **Update**   when you edit or rename existing file
+- **Fix**   when you fix  a known bug. Also, in description must explain what bug is fixed
+- **Delete**   when you Delete file or directory    
+
+### Commit message
+
+Start with upper letter and ending **without** full stop `.`
+
+Don't commit sandwich update such as edit `.gitignore` when commit message like "[Add] Hello class"
+
+## Reference
+[Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
+
+[Semantic Versioning 2.0.0](https://semver.org/#semantic-versioning-200)
