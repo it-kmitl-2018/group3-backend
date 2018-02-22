@@ -13,6 +13,7 @@ public final class ExchangedDocumentModel {
     private final TypeCode purposeCode;
     private final String globalID;
     private final Timestamp creationDateTime;
+    private final IncludedNoteModel includedNote;
 
     private ExchangedDocumentModel(InvoiceBuilder builder) {
         this.id = builder.id;
@@ -23,6 +24,7 @@ public final class ExchangedDocumentModel {
         this.purposeCode = builder.purposeCode;
         this.globalID = builder.globalID;
         this.creationDateTime = builder.creationDateTime;
+        this.includedNote = builder.includedNote;
     }
 
     public String getId() {
@@ -57,6 +59,10 @@ public final class ExchangedDocumentModel {
         return creationDateTime;
     }
 
+    public IncludedNoteModel getIncludedNote() {
+        return includedNote;
+    }
+
     public static class InvoiceBuilder {
 
         private final String id;
@@ -67,6 +73,7 @@ public final class ExchangedDocumentModel {
         private TypeCode purposeCode;
         private String globalID;
         private Timestamp creationDateTime;
+        private IncludedNoteModel includedNote;
 
         public InvoiceBuilder(String id,
                        Timestamp issueDateTime) {
@@ -101,6 +108,11 @@ public final class ExchangedDocumentModel {
 
         public InvoiceBuilder withCreationDateTime(Timestamp creationDateTime) {
             this.creationDateTime = creationDateTime;
+            return this;
+        }
+
+        public InvoiceBuilder withIncludedNote(IncludedNoteModel includedNote) {
+            this.includedNote = includedNote;
             return this;
         }
 
