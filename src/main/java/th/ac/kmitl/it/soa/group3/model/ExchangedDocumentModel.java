@@ -3,17 +3,17 @@ package th.ac.kmitl.it.soa.group3.model;
 import org.omg.CORBA.TypeCode;
 import java.sql.Timestamp;
 
-public final class ExchangedDocumentModel {
+public class ExchangedDocumentModel {
 
-    private final String id;
-    private final String name;
-    private final TypeCode typeCode;
-    private final Timestamp issueDateTime;
-    private final String purpose;
-    private final TypeCode purposeCode;
-    private final String globalID;
-    private final Timestamp creationDateTime;
-    private final IncludedNoteModel includedNote;
+    private String id;
+    private String name;
+    private TypeCode typeCode;
+    private Timestamp issueDateTime;
+    private String purpose;
+    private TypeCode purposeCode;
+    private String globalID;
+    private Timestamp creationDateTime;
+    private IncludedNoteModel includedNote;
 
     private ExchangedDocumentModel(InvoiceBuilder builder) {
         this.id = builder.id;
@@ -31,36 +31,72 @@ public final class ExchangedDocumentModel {
         return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public TypeCode getTypeCode() {
         return typeCode;
     }
 
+    public void setTypeCode(TypeCode typeCode) {
+        this.typeCode = typeCode;
+    }
+
     public Timestamp getIssueDateTime() {
         return issueDateTime;
+    }
+
+    public void setIssueDateTime(Timestamp issueDateTime) {
+        this.issueDateTime = issueDateTime;
     }
 
     public String getPurpose() {
         return purpose;
     }
 
+    public void setPurpose(String purpose) {
+        this.purpose = purpose;
+    }
+
     public TypeCode getPurposeCode() {
         return purposeCode;
+    }
+
+    public void setPurposeCode(TypeCode purposeCode) {
+        this.purposeCode = purposeCode;
     }
 
     public String getGlobalID() {
         return globalID;
     }
 
+    public void setGlobalID(String globalID) {
+        this.globalID = globalID;
+    }
+
     public Timestamp getCreationDateTime() {
         return creationDateTime;
     }
 
+    public void setCreationDateTime(Timestamp creationDateTime) {
+        this.creationDateTime = creationDateTime;
+    }
+
     public IncludedNoteModel getIncludedNote() {
         return includedNote;
+    }
+
+    public void setIncludedNote(IncludedNoteModel includedNote) {
+        this.includedNote = includedNote;
     }
 
     public static class InvoiceBuilder {
@@ -76,7 +112,7 @@ public final class ExchangedDocumentModel {
         private IncludedNoteModel includedNote;
 
         public InvoiceBuilder(String id,
-                       Timestamp issueDateTime) {
+                              Timestamp issueDateTime) {
             this.id = id;
             this.issueDateTime = issueDateTime;
         }

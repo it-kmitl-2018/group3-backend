@@ -5,13 +5,9 @@ public class IncludedNoteModel {
     private String subject;
     private String content;
 
-    public IncludedNoteModel() {
-    }
-
-    public IncludedNoteModel(String subject,
-                             String content) {
-        this.subject = subject;
-        this.content = content;
+    private IncludedNoteModel(InvoiceBuilder builder) {
+        this.subject = builder.subject;
+        this.content = builder.content;
     }
 
     public String getSubject() {
@@ -28,5 +24,29 @@ public class IncludedNoteModel {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public static class InvoiceBuilder {
+
+        private String subject;
+        private String content;
+
+        public InvoiceBuilder() {
+
+        }
+
+        public InvoiceBuilder withSubject(String subject) {
+            this.subject = subject;
+            return this;
+        }
+
+        public InvoiceBuilder withContent(String content) {
+            this.content = content;
+            return this;
+        }
+
+        public IncludedNoteModel build() {
+            return new IncludedNoteModel(this);
+        }
     }
 }
