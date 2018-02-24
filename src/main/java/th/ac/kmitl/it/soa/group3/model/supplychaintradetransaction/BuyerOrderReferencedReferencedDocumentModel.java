@@ -5,22 +5,22 @@ import java.sql.Timestamp;
 
 public class BuyerOrderReferencedReferencedDocumentModel {
 
-    private String issueAssignedID;
+    private String issuerAssignedID;
     private Timestamp issueDateTime;
     private TypeCode referenceTypeCode;
 
     private BuyerOrderReferencedReferencedDocumentModel(Builder builder) {
-        this.issueAssignedID = builder.issueAssignedID;
+        this.issuerAssignedID = builder.issuerAssignedID;
         this.issueDateTime = builder.issueDateTime;
         this.referenceTypeCode = builder.referenceTypeCode;
     }
 
     public String getIssueAssignedID() {
-        return issueAssignedID;
+        return issuerAssignedID;
     }
 
     public void setIssueAssignedID(String issueAssignedID) {
-        this.issueAssignedID = issueAssignedID;
+        this.issuerAssignedID = issueAssignedID;
     }
 
     public Timestamp getIssueDateTime() {
@@ -41,12 +41,12 @@ public class BuyerOrderReferencedReferencedDocumentModel {
 
     public static class Builder {
 
-        private String issueAssignedID;
+        private String issuerAssignedID;
         private Timestamp issueDateTime;
         private TypeCode referenceTypeCode;
 
-        public Builder withIssueAssignedID(String issueAssignedID) {
-            this.issueAssignedID = issueAssignedID;
+        public Builder withIssueAssignedID(String issuerAssignedID) {
+            this.issuerAssignedID = issuerAssignedID;
             return this;
         }
 
