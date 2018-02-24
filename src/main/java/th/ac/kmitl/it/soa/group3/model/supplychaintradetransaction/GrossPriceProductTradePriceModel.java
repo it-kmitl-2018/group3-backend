@@ -3,9 +3,11 @@ package th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction;
 public class GrossPriceProductTradePriceModel {
 
     private double chargeAmount;
+    private SpecifiedTradeAllowanceChargeModel appliedTradeAllowanceCharge;
 
     public GrossPriceProductTradePriceModel(Builder builder) {
         this.chargeAmount = builder.chargeAmount;
+        this.appliedTradeAllowanceCharge = builder.appliedTradeAllowanceCharge;
     }
 
     public double getChargeAmount() {
@@ -16,12 +18,27 @@ public class GrossPriceProductTradePriceModel {
         this.chargeAmount = chargeAmount;
     }
 
+    public SpecifiedTradeAllowanceChargeModel getAppliedTradeAllowanceCharge() {
+        return appliedTradeAllowanceCharge;
+    }
+
+    public void setAppliedTradeAllowanceCharge(SpecifiedTradeAllowanceChargeModel appliedTradeAllowanceCharge) {
+        this.appliedTradeAllowanceCharge = appliedTradeAllowanceCharge;
+    }
+
     public static class Builder {
 
         private double chargeAmount;
+        private SpecifiedTradeAllowanceChargeModel appliedTradeAllowanceCharge;
 
         public Builder withChargeAmount(double chargeAmount) {
             this.chargeAmount = chargeAmount;
+            return this;
+        }
+
+        public Builder withAppliedTradeAllowanceCharge(
+                SpecifiedTradeAllowanceChargeModel appliedTradeAllowanceCharge) {
+            this.appliedTradeAllowanceCharge = appliedTradeAllowanceCharge;
             return this;
         }
 
