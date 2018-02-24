@@ -1,4 +1,4 @@
-package th.ac.kmitl.it.soa.group3.model;
+package th.ac.kmitl.it.soa.group3.model.exchangeddocument;
 
 public class IncludedNoteModel {
 
@@ -30,10 +30,6 @@ public class IncludedNoteModel {
 
         private String subject;
         private String content;
-
-        public InvoiceBuilder() {
-
-        }
 
         public InvoiceBuilder withSubject(String subject) {
             this.subject = subject;

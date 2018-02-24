@@ -1,6 +1,7 @@
-package th.ac.kmitl.it.soa.group3.model;
+package th.ac.kmitl.it.soa.group3.model.exchangeddocument;
 
 import org.omg.CORBA.TypeCode;
+
 import java.sql.Timestamp;
 
 public class ExchangedDocumentModel {
