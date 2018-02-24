@@ -5,7 +5,7 @@ public class GrossPriceProductTradePriceModel {
     private double chargeAmount;
     private SpecifiedTradeAllowanceChargeModel appliedTradeAllowanceCharge;
 
-    public GrossPriceProductTradePriceModel(Builder builder) {
+    private GrossPriceProductTradePriceModel(Builder builder) {
         this.chargeAmount = builder.chargeAmount;
         this.appliedTradeAllowanceCharge = builder.appliedTradeAllowanceCharge;
     }
