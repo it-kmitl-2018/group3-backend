@@ -14,7 +14,7 @@ public class ApplicableHeaderTradeSettlementModel {
     private TradePartyModel payerTradeParty;
     private TradePartyModel payeeTradeParty;
 
-    public ApplicableHeaderTradeSettlementModel(Builder builder) {
+    private ApplicableHeaderTradeSettlementModel(Builder builder) {
         this.invoiceCurrencyCode = builder.invoiceCurrencyCode;
         this.applicableTradeTax = builder.applicableTradeTax;
         this.specifiedTradeAllowanceCharge = builder.specifiedTradeAllowanceCharge;
