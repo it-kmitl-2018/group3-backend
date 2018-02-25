@@ -1,4 +1,4 @@
-package th.ac.kmitl.it.soa.group3.model;
+package th.ac.kmitl.it.soa.group3.model.exchangeddocument;
 
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
