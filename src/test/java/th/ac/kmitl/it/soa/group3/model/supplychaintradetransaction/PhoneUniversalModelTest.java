@@ -9,10 +9,8 @@ public class PhoneUniversalModelTest {
 
     @Test
     public void itShouldBePhoneNumber() {
-
         PhoneUniversalModel phoneModel = new PhoneUniversalModel(phoneNumber);
         assertEquals(phoneNumber, phoneModel.phoneNumber);
-
     }
 
 }
