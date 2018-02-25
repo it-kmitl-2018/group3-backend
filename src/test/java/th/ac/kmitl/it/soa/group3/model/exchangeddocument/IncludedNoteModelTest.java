@@ -11,7 +11,6 @@ public class IncludedNoteModelTest {
 
     @Test
     public void itShouldGetSubjectAndContentByGetter() {
-
         IncludedNoteModel.Builder builder = new IncludedNoteModel.Builder();
         IncludedNoteModel includedNoteModel = builder
                 .withSubject(this.subject)
