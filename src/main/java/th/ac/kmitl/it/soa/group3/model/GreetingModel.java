@@ -2,9 +2,6 @@ package th.ac.kmitl.it.soa.group3.model;
 
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.Entity;
-
-@Entity
 public class GreetingModel {
 
     public final int id;
