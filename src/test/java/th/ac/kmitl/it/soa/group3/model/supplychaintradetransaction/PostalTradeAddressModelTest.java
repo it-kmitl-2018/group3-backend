@@ -7,8 +7,8 @@ public class PostalTradeAddressModelTest {
 
     private String postCode = "10250";
     private String buildingName = "PrachasukCondoTown";
-    private String addressLine1 = "99/2546 Precha";
-    private String addressLine2 = "96/96 Precha";
+    private String houseNumber = "99/2546";
+    private String suiteNumber = "Room 828 8th Floor";
     private String soi = "Nakkeeralamthong";
     private String village = "Nakkeera";
     private String moo = "16";
@@ -25,8 +25,8 @@ public class PostalTradeAddressModelTest {
         PostalTradeAddressModel postalTradeAddressModel = builder
                 .withPostCode(this.postCode)
                 .withBuildingName(this.buildingName)
-                .withAddressLine1(this.addressLine1)
-                .withAddressLine2(this.addressLine2)
+                .withHouseNumber(this.houseNumber)
+                .withSuiteNumber(this.suiteNumber)
                 .withSoi(this.soi)
                 .withVillage(this.village)
                 .withMoo(this.moo)
@@ -40,8 +40,8 @@ public class PostalTradeAddressModelTest {
 
         assertEquals(this.postCode, postalTradeAddressModel.postCode);
         assertEquals(this.buildingName, postalTradeAddressModel.buildingName);
-        assertEquals(this.addressLine1, postalTradeAddressModel.addressLine1);
-        assertEquals(this.addressLine2, postalTradeAddressModel.addressLine2);
+        assertEquals(this.houseNumber, postalTradeAddressModel.houseNumber);
+        assertEquals(this.suiteNumber, postalTradeAddressModel.suiteNumber);
         assertEquals(this.soi, postalTradeAddressModel.soi);
         assertEquals(this.village, postalTradeAddressModel.village);
         assertEquals(this.moo, postalTradeAddressModel.moo);

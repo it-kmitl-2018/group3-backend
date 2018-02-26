@@ -4,8 +4,8 @@ public class PostalTradeAddressModel {
 
     public String postCode;
     public String buildingName;
-    public String addressLine1;
-    public String addressLine2;
+    public String houseNumber;
+    public String suiteNumber;
     public String soi;
     public String village;
     public String moo;
@@ -19,8 +19,8 @@ public class PostalTradeAddressModel {
     private PostalTradeAddressModel(Builder builder) {
         this.postCode = builder.postCode;
         this.buildingName = builder.buildingName;
-        this.addressLine1 = builder.addressLine1;
-        this.addressLine2 = builder.addressLine2;
+        this.houseNumber = builder.houseNumber;
+        this.suiteNumber = builder.suiteNumber;
         this.soi = builder.soi;
         this.village = builder.village;
         this.moo = builder.moo;
@@ -36,8 +36,8 @@ public class PostalTradeAddressModel {
 
         private String postCode;
         private String buildingName;
-        private String addressLine1;
-        private String addressLine2;
+        private String houseNumber;
+        private String suiteNumber;
         private String soi;
         private String village;
         private String moo;
@@ -58,13 +58,13 @@ public class PostalTradeAddressModel {
             return this;
         }
 
-        public Builder withAddressLine1(String addressLine1) {
-            this.addressLine1 = addressLine1;
+        public Builder withHouseNumber(String houseNumber) {
+            this.houseNumber = houseNumber;
             return this;
         }
 
-        public Builder withAddressLine2(String addressLine2) {
-            this.addressLine2 = addressLine2;
+        public Builder withSuiteNumber(String suiteNumber) {
+            this.suiteNumber = suiteNumber;
             return this;
         }
 
