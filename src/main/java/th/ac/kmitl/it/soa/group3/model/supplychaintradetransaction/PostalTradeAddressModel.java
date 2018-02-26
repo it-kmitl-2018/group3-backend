@@ -4,11 +4,11 @@ public class PostalTradeAddressModel {
 
     public String postCode;
     public String buildingName;
-    public String line1;
-    public String line2;
-    public String line3;
-    public String line4;
-    public String line5;
+    public String addressLine1;
+    public String addressLine2;
+    public String soi;
+    public String village;
+    public String moo;
     public String streetName;
     public String cityName;
     public String citySubDivisionName;
@@ -19,11 +19,11 @@ public class PostalTradeAddressModel {
     private PostalTradeAddressModel(Builder builder) {
         this.postCode = builder.postCode;
         this.buildingName = builder.buildingName;
-        this.line1 = builder.line1;
-        this.line2 = builder.line2;
-        this.line3 = builder.line3;
-        this.line4 = builder.line4;
-        this.line5 = builder.line5;
+        this.addressLine1 = builder.addressLine1;
+        this.addressLine2 = builder.addressLine2;
+        this.soi = builder.soi;
+        this.village = builder.village;
+        this.moo = builder.moo;
         this.streetName = builder.streetName;
         this.cityName = builder.cityName;
         this.citySubDivisionName = builder.citySubDivisionName;
@@ -36,11 +36,11 @@ public class PostalTradeAddressModel {
 
         private String postCode;
         private String buildingName;
-        private String line1;
-        private String line2;
-        private String line3;
-        private String line4;
-        private String line5;
+        private String addressLine1;
+        private String addressLine2;
+        private String soi;
+        private String village;
+        private String moo;
         private String streetName;
         private String cityName;
         private String citySubDivisionName;
@@ -58,28 +58,28 @@ public class PostalTradeAddressModel {
             return this;
         }
 
-        public Builder withLine1(String line1) {
-            this.line1 = line1;
+        public Builder withAddressLine1(String addressLine1) {
+            this.addressLine1 = addressLine1;
             return this;
         }
 
-        public Builder withLine2(String line2) {
-            this.line2 = line2;
+        public Builder withAddressLine2(String addressLine2) {
+            this.addressLine2 = addressLine2;
             return this;
         }
 
-        public Builder withLine3(String line3) {
-            this.line3 = line3;
+        public Builder withSoi(String soi) {
+            this.soi = soi;
             return this;
         }
 
-        public Builder withLine4(String line4) {
-            this.line4 = line4;
+        public Builder withVillage(String village) {
+            this.village = village;
             return this;
         }
 
-        public Builder withLine5(String line5) {
-            this.line5 = line5;
+        public Builder withMoo(String moo) {
+            this.moo = moo;
             return this;
         }
 
