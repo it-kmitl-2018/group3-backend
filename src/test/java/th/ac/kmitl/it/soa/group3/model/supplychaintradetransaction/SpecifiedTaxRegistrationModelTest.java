@@ -11,7 +11,7 @@ public class SpecifiedTaxRegistrationModelTest {
     public void itShouldGetIDByGetter() {
         SpecifiedTaxRegistrationModel.Builder builder = new SpecifiedTaxRegistrationModel.Builder();
         SpecifiedTaxRegistrationModel specTaxRegisModel = builder
-                .withID(this.id)
+                .id(this.id)
                 .build();
 
         assertEquals(this.id, specTaxRegisModel.id);
