@@ -23,19 +23,19 @@ public class PostalTradeAddressModelTest {
     public void itShouldGetAllInfoByGetter() {
         PostalTradeAddressModel.Builder builder = new PostalTradeAddressModel.Builder();
         PostalTradeAddressModel postalTradeAddressModel = builder
-                .withPostCode(this.postCode)
-                .withBuildingName(this.buildingName)
-                .withHouseNumber(this.houseNumber)
-                .withSuiteNumber(this.suiteNumber)
-                .withSoi(this.soi)
-                .withVillage(this.village)
-                .withMoo(this.moo)
-                .withStreetName(this.streetName)
-                .withCityName(this.cityName)
-                .withCitySubDivisionName(this.citySubDivisionName)
-                .withCountryID(this.countryID)
-                .withCountrySubDivisionID(this.countrySubDivisionID)
-                .withBuildingNumber(this.buildingNumber)
+                .postCode(this.postCode)
+                .buildingName(this.buildingName)
+                .houseNumber(this.houseNumber)
+                .suiteNumber(this.suiteNumber)
+                .soi(this.soi)
+                .village(this.village)
+                .moo(this.moo)
+                .streetName(this.streetName)
+                .cityName(this.cityName)
+                .citySubDivisionName(this.citySubDivisionName)
+                .countryID(this.countryID)
+                .countrySubDivisionID(this.countrySubDivisionID)
+                .buildingNumber(this.buildingNumber)
                 .build();
 
         assertEquals(this.postCode, postalTradeAddressModel.postCode);
