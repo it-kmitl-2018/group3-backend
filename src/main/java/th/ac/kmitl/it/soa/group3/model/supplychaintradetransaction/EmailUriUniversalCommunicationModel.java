@@ -5,5 +5,5 @@ import lombok.Builder;
 @Builder(builderClassName = "Builder")
 public class EmailUriUniversalCommunicationModel {
 
-    private String uriID;
+    public String uriID;
 }

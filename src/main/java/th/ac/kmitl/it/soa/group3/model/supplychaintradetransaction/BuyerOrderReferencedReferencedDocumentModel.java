@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 @Builder(builderClassName = "Builder")
 public class BuyerOrderReferencedReferencedDocumentModel {
 
-    private String issueAssignedID;
-    private Timestamp issueDateTime;
-    private TypeCode referenceTypeCode;
+    public String issueAssignedID;
+    public Timestamp issueDateTime;
+    public TypeCode referenceTypeCode;
 }

@@ -5,6 +5,6 @@ import lombok.Builder;
 @Builder(builderClassName = "Builder")
 public class DesignatedProductClassificationModel {
 
-    private String classCode;
-    private String className;
+    public String classCode;
+    public String className;
 }
