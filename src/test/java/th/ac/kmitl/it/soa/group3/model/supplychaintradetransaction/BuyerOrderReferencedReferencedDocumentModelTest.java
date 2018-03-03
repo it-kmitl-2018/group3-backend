@@ -3,7 +3,6 @@ package th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction;
 import org.junit.jupiter.api.Test;
 import th.ac.kmitl.it.soa.group3.model.TypeCode;
 import java.sql.Timestamp;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BuyerOrderReferencedReferencedDocumentModelTest {
