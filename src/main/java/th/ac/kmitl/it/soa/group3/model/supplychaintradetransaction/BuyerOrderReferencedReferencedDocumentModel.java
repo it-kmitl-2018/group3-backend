@@ -4,7 +4,7 @@ import lombok.Builder;
 import th.ac.kmitl.it.soa.group3.model.TypeCode;
 import java.sql.Timestamp;
 
-@Builder
+@Builder(builderClassName = "Builder")
 public class BuyerOrderReferencedReferencedDocumentModel {
 
     private String issueAssignedID;
