@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TradeTaxModelTest {
 
-    private final String typeCode = "VAT";
-    private final double calculatedRate = 0.07;
-    private final double basisAmount = 100.00;
-    private final double calculatedAmount = 7.00;
+    private String typeCode = "VAT";
+    private double calculatedRate = 0.07;
+    private double basisAmount = 100.00;
+    private double calculatedAmount = 7.00;
 
     @Test
     public void expectTradingTaxInfo() {

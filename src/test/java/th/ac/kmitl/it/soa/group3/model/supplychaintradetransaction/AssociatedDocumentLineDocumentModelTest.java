@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AssociatedDocumentLineDocumentModelTest {
 
-    private final String lineID = "8080";
+    private String lineID = "8080";
 
     @Test
     public void expectLineID() {

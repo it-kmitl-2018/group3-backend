@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TradeDeliveryTermsModelTest {
 
-    private final String deliveryTypeCode = "DDP";
+    private String deliveryTypeCode = "DDP";
 
     @Test
     public void expectDeliveryTypeCode() {
