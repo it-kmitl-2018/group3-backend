@@ -13,8 +13,8 @@ public class IncludedNoteModelTest {
     public void itShouldGetSubjectAndContentByGetter() {
         IncludedNoteModel.Builder builder = new IncludedNoteModel.Builder();
         IncludedNoteModel includedNoteModel = builder
-                .withSubject(this.subject)
-                .withContent(this.content)
+                .subject(this.subject)
+                .content(this.content)
                 .build();
 
         assertEquals(subject, includedNoteModel.subject);
