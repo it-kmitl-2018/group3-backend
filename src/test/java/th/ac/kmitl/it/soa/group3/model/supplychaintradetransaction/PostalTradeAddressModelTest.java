@@ -1,6 +1,9 @@
 package th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.junit.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PostalTradeAddressModelTest {
@@ -19,24 +22,25 @@ public class PostalTradeAddressModelTest {
     private String countrySubDivisionID = "10";
     private String buildingNumber = "3/34";
 
+    private PostalTradeAddressModel.Builder builder = new PostalTradeAddressModel.Builder();
+    private PostalTradeAddressModel postalTradeAddressModel = builder
+            .postCode(this.postCode)
+            .buildingName(this.buildingName)
+            .houseNumber(this.houseNumber)
+            .suiteNumber(this.suiteNumber)
+            .soi(this.soi)
+            .village(this.village)
+            .moo(this.moo)
+            .streetName(this.streetName)
+            .cityName(this.cityName)
+            .citySubDivisionName(this.citySubDivisionName)
+            .countryID(this.countryID)
+            .countrySubDivisionID(this.countrySubDivisionID)
+            .buildingNumber(this.buildingNumber)
+            .build();
+
     @Test
     public void itShouldGetAllInfoByGetter() {
-        PostalTradeAddressModel.Builder builder = new PostalTradeAddressModel.Builder();
-        PostalTradeAddressModel postalTradeAddressModel = builder
-                .postCode(this.postCode)
-                .buildingName(this.buildingName)
-                .houseNumber(this.houseNumber)
-                .suiteNumber(this.suiteNumber)
-                .soi(this.soi)
-                .village(this.village)
-                .moo(this.moo)
-                .streetName(this.streetName)
-                .cityName(this.cityName)
-                .citySubDivisionName(this.citySubDivisionName)
-                .countryID(this.countryID)
-                .countrySubDivisionID(this.countrySubDivisionID)
-                .buildingNumber(this.buildingNumber)
-                .build();
 
         assertEquals(this.postCode, postalTradeAddressModel.postCode);
         assertEquals(this.buildingName, postalTradeAddressModel.buildingName);
