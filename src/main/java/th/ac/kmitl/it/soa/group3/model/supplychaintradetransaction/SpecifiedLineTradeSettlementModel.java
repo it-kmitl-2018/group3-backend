@@ -5,11 +5,7 @@ import lombok.Builder;
 @Builder(builderClassName = "Builder")
 public class SpecifiedLineTradeSettlementModel {
 
-    /*
-     * Wait for merge approve
-     * public TradeTaxModel tradeTaxModel;
-     */
+    public TradeTaxModel tradeTaxModel;
     public SpecifiedTradeAllowanceChargeModel specifiedTradeAllowanceChargeModel;
     public SpecifiedTradeSettlementMonetarySummationModel specifiedTradeSettlementMonetarySummationModel;
-
 }

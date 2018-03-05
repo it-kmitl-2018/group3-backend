@@ -10,8 +10,20 @@ public class SpecifiedLineTradeSettlementModelTest {
     private double taxTotalAmount = 749.99;
     private double netLineTotalAmount = 10700.99;
     private double netIncludingTaxesLineTotalAmount = 11449.99;
-    private String reasonCode = "ส่วนลดจากราคาปกติ";
-    private String reason = "95";
+    private double calculatedRate = 0.07;
+    private double basisAmount = 100.00;
+    private double calculatedAmount = 7.00;
+    private String reasonCode = "82";
+    private String reason = "Loading charge";
+    private String taxTypeCode = "VAT";
+
+    private TradeTaxModel tradeTaxModel =
+            new TradeTaxModel.Builder()
+                    .typeCode(this.taxTypeCode)
+                    .calculatedRate(this.calculatedRate)
+                    .basisAmount(this.basisAmount)
+                    .calculatedAmount(this.calculatedAmount)
+                    .build();
 
     private SpecifiedTradeAllowanceChargeModel tradeAllowanceCharge =
             new SpecifiedTradeAllowanceChargeModel.Builder()
@@ -20,7 +32,6 @@ public class SpecifiedLineTradeSettlementModelTest {
                     .reasonCode(this.reasonCode)
                     .reason(this.reason)
                     .build();
-
 
     private SpecifiedTradeSettlementMonetarySummationModel tradeSettlementSummation =
             new SpecifiedTradeSettlementMonetarySummationModel.Builder()
@@ -33,10 +44,12 @@ public class SpecifiedLineTradeSettlementModelTest {
     public void expectTradeSettlementInfo() {
         SpecifiedLineTradeSettlementModel.Builder builder = new SpecifiedLineTradeSettlementModel.Builder();
         SpecifiedLineTradeSettlementModel tradeSettlementModel = builder
+                .tradeTaxModel(this.tradeTaxModel)
                 .specifiedTradeAllowanceChargeModel(this.tradeAllowanceCharge)
                 .specifiedTradeSettlementMonetarySummationModel(this.tradeSettlementSummation)
                 .build();
 
+        assertEquals(this.tradeTaxModel, tradeSettlementModel.tradeTaxModel);
         assertEquals(this.tradeAllowanceCharge, tradeSettlementModel.specifiedTradeAllowanceChargeModel);
         assertEquals(this.tradeSettlementSummation,
                 tradeSettlementModel.specifiedTradeSettlementMonetarySummationModel);
