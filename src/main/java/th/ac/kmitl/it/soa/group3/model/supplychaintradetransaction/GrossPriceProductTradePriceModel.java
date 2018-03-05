@@ -6,8 +6,5 @@ import lombok.Builder;
 public class GrossPriceProductTradePriceModel {
 
     public double chargeAmount;
-    /*
-     * Wait for following class
-     * public AppliedTradeAllowanceCharge appliedTradeAllowanceCharge;
-     */
+    public SpecifiedTradeAllowanceChargeModel appliedTradeAllowanceCharge;
 }
