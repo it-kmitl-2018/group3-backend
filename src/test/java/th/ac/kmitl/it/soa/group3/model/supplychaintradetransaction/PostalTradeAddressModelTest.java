@@ -57,7 +57,6 @@ public class PostalTradeAddressModelTest {
         assertEquals(this.buildingNumber, postalTradeAddressModel.buildingNumber);
     }
 
-
     @Test
     public void itShouldGetXmlString() throws JsonProcessingException {
 
