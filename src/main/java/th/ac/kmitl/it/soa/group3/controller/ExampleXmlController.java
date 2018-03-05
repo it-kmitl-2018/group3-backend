@@ -4,7 +4,6 @@ import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import th.ac.kmitl.it.soa.group3.model.ExampleXmlModel;
-
 import java.util.ArrayList;
 
 @RestController
