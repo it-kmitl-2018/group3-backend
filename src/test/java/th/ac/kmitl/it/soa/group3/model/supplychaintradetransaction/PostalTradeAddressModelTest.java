@@ -56,4 +56,14 @@ public class PostalTradeAddressModelTest {
         assertEquals(this.countrySubDivisionID, postalTradeAddressModel.countrySubDivisionID);
         assertEquals(this.buildingNumber, postalTradeAddressModel.buildingNumber);
     }
+
+
+    @Test
+    public void itShouldGetXmlString() throws JsonProcessingException {
+
+        XmlMapper xmlMapper = new XmlMapper();
+        String xml = xmlMapper.writeValueAsString(this.postalTradeAddressModel);
+
+        assertNotNull(xml);
+    }
 }
