@@ -11,23 +11,23 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-public class ExchangedDocumentControllerTest {
+public class TaxInvoiceControllerTest {
 
     private String requestBody = "{}";
 
     static private MockMvc mockMvc;
 
     @InjectMocks
-    private static ExchangedDocumentController exchangedDocumentController = new ExchangedDocumentController();
+    private static TaxInvoiceController taxInvoiceController = new TaxInvoiceController();
 
     @BeforeAll
     static void init() {
-        mockMvc = MockMvcBuilders.standaloneSetup(exchangedDocumentController).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(taxInvoiceController).build();
     }
 
     @Test
     void shouldRequestAndGetXmlResponse() throws Exception {
-        mockMvc.perform(post("/exchangeddoc")
+        mockMvc.perform(post("/tax_invoice")
                 .accept(MediaType.APPLICATION_XML)
                 .content(requestBody)
                 .contentType(MediaType.APPLICATION_JSON))

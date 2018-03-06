@@ -11,9 +11,9 @@ import th.ac.kmitl.it.soa.group3.wrapper.ExchangedDocWrapper;
 
 @RestController
 @Api(value = "ExchangedDocument XML", description = "This is ExchangedDocument XML")
-public class ExchangedDocumentController {
+public class TaxInvoiceController {
 
-    @PostMapping(value = "/exchangeddoc")
+    @PostMapping(value = "/tax_invoice")
     @ApiOperation(value = "Convert ExchangedDocument to XML")
     public ExchangedDocumentModel exchangedDocumentXML(
             @ApiParam(value = "ExchangedDocument Object", required = true)
