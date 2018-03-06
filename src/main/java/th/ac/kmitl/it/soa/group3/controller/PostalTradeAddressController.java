@@ -20,5 +20,4 @@ public class PostalTradeAddressController {
 
         return postalTradeAddressModel;
     }
-
 }
