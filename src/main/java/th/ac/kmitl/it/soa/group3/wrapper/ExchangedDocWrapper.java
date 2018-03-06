@@ -56,6 +56,7 @@ public class ExchangedDocWrapper {
                 .issueDateTime(this.issueDateTime)
                 .purpose(this.purpose)
                 .purposeCode(this.purposeCode)
+                .globalID(this.globalID)
                 .creationDateTime(this.creationDateTime)
                 .includedNote(includedNote)
                 .build();
