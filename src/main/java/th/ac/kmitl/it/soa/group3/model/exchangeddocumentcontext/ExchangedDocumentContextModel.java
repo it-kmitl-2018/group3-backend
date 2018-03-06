@@ -1,4 +1,4 @@
-package th.ac.kmitl.it.soa.group3.model.crossindustryinvoice;
+package th.ac.kmitl.it.soa.group3.model.exchangeddocumentcontext;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
