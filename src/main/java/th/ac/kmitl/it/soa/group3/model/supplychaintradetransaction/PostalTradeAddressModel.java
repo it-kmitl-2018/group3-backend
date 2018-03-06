@@ -46,4 +46,35 @@ public class PostalTradeAddressModel {
 
     @JacksonXmlProperty(localName = "ram:BuildingNumber")
     public String buildingNumber;
+
+    public PostalTradeAddressModel() {
+    }
+
+    public PostalTradeAddressModel(String postCode,
+                                   String buildingName,
+                                   String houseNumber,
+                                   String suiteNumber,
+                                   String soi,
+                                   String village,
+                                   String moo,
+                                   String streetName,
+                                   String cityName,
+                                   String citySubDivisionName,
+                                   String countryID,
+                                   String countrySubDivisionID,
+                                   String buildingNumber) {
+        this.postCode = postCode;
+        this.buildingName = buildingName;
+        this.houseNumber = houseNumber;
+        this.suiteNumber = suiteNumber;
+        this.soi = soi;
+        this.village = village;
+        this.moo = moo;
+        this.streetName = streetName;
+        this.cityName = cityName;
+        this.citySubDivisionName = citySubDivisionName;
+        this.countryID = countryID;
+        this.countrySubDivisionID = countrySubDivisionID;
+        this.buildingNumber = buildingNumber;
+    }
 }
