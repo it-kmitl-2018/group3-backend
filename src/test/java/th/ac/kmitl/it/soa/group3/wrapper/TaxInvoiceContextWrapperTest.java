@@ -6,18 +6,18 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ExchangedDocumentContextWrapperTest {
+class TaxInvoiceContextWrapperTest {
 
     private String id = "AER123";
-    private ExchangedDocumentContextWrapper wrapper = ExchangedDocumentContextWrapper.builder()
+    private TaxInvoiceContextWrapper wrapper = TaxInvoiceContextWrapper.builder()
             .guidelineDocumentId(this.id)
             .build();
 
     @Test
     void itShouldGetIdByWrapper() {
         assertNotNull(this.wrapper.getModel());
-        assertNotNull(this.wrapper.getModel().guidelineSpecifiedDocumentContextParameterModel);
-        assertEquals(this.id, wrapper.getModel().guidelineSpecifiedDocumentContextParameterModel.id);
+        assertNotNull(this.wrapper.getModel().taxInvoiceContextSpecModel);
+        assertEquals(this.id, wrapper.getModel().taxInvoiceContextSpecModel.id);
     }
 
     @Test
