@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class ExchangedDocumentContextWrapperTest {
 
     private String id = "AER123";
-
     private ExchangedDocumentContextWrapper wrapper = ExchangedDocumentContextWrapper.builder()
             .guidelineDocumentId(this.id)
             .build();
