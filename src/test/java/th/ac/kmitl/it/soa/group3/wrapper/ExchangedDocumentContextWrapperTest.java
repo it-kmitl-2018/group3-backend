@@ -16,7 +16,6 @@ class ExchangedDocumentContextWrapperTest {
 
     @Test
     void itShouldGetIdByWrapper() {
-
         assertNotNull(this.wrapper.getModel());
         assertNotNull(this.wrapper.getModel().guidelineSpecifiedDocumentContextParameterModel);
         assertEquals(this.id, wrapper.getModel().guidelineSpecifiedDocumentContextParameterModel.id);
@@ -24,7 +23,6 @@ class ExchangedDocumentContextWrapperTest {
 
     @Test
     public void itShouldGetXmlString() throws JsonProcessingException {
-
         XmlMapper xmlMapper = new XmlMapper();
         String xml = xmlMapper.writeValueAsString(this.wrapper.getModel());
 
