@@ -1,8 +1,8 @@
 package th.ac.kmitl.it.soa.group3.wrapper;
 
 import java.sql.Timestamp;
-
 import org.junit.Test;
+import th.ac.kmitl.it.soa.group3.forms.TaxInvoiceForm;
 import th.ac.kmitl.it.soa.group3.model.TypeCode;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,11 +18,11 @@ public class ExchangedDocWrapperTest {
     private String purposeCode = "DCNS03";
     private String globalID = "ABCDEFGHIJKLMNOPQRST123456789012345";
     private Timestamp creationDateTime = new Timestamp(System.currentTimeMillis());
+    private TaxInvoiceForm taxInvoiceForm;
 
     @Test
     public void itShouldGetAllInfoByGetter() {
-        ExchangedDocWrapper.Builder builder = new ExchangedDocWrapper.Builder();
-        ExchangedDocWrapper wrapper = builder
+        this.taxInvoiceForm = TaxInvoiceForm.builder()
                 .id(this.id)
                 .name(this.name)
                 .typeCode(this.typeCode)
@@ -34,16 +34,8 @@ public class ExchangedDocWrapperTest {
                 .subject(this.subject)
                 .content(this.content)
                 .build();
+        ExchangedDocWrapper wrapper = new ExchangedDocWrapper(taxInvoiceForm);
 
-        assertEquals(this.id, wrapper.id);
-        assertEquals(this.name, wrapper.name);
-        assertEquals(this.typeCode, wrapper.typeCode);
-        assertEquals(this.issueDateTime, wrapper.issueDateTime);
-        assertEquals(this.purpose, wrapper.purpose);
-        assertEquals(this.purposeCode, wrapper.purposeCode);
-        assertEquals(this.globalID, wrapper.globalID);
-        assertEquals(this.creationDateTime, wrapper.creationDateTime);
-        assertEquals(this.subject, wrapper.subject);
-        assertEquals(this.content, wrapper.content);
+        assertEquals(this.taxInvoiceForm, wrapper.taxInvoiceForm);
     }
 }
