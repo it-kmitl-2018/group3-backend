@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import th.ac.kmitl.it.soa.group3.forms.TaxInvoiceForm;
 import th.ac.kmitl.it.soa.group3.model.exchangeddocument.ExchangedDocumentModel;
 import th.ac.kmitl.it.soa.group3.wrapper.ExchangedDocWrapper;
 
@@ -17,7 +18,8 @@ public class TaxInvoiceController {
     @ApiOperation(value = "Convert ExchangedDocument to XML")
     public ExchangedDocumentModel exchangedDocumentXML(
             @ApiParam(value = "ExchangedDocument Object", required = true)
-            @RequestBody ExchangedDocWrapper wrapper) {
+            @RequestBody TaxInvoiceForm taxInvoiceForm) {
+        ExchangedDocWrapper wrapper = new ExchangedDocWrapper(taxInvoiceForm);
 
         return wrapper.getModelClass();
     }
