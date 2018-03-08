@@ -16,7 +16,6 @@ public class TaxInvoiceFormTest {
     private String purpose = "คำนวณราคาค่าบริการผิดพลาดสูงกว่าที่เป็นจริง";
     private String purposeCode = "DCNS03";
     private String globalID = "ABCDEFGHIJKLMNOPQRST123456789012345";
-    private Timestamp creationDateTime = new Timestamp(System.currentTimeMillis());
 
     @Test
     public void itShouldGetAllInfoByGetter() {
@@ -28,7 +27,6 @@ public class TaxInvoiceFormTest {
                 .purpose(this.purpose)
                 .purposeCode(this.purposeCode)
                 .globalID(this.globalID)
-                .creationDateTime(this.creationDateTime)
                 .subject(this.subject)
                 .content(this.content)
                 .build();
@@ -40,7 +38,6 @@ public class TaxInvoiceFormTest {
         assertEquals(this.purpose, taxInvoiceForm.purpose);
         assertEquals(this.purposeCode, taxInvoiceForm.purposeCode);
         assertEquals(this.globalID, taxInvoiceForm.globalID);
-        assertEquals(this.creationDateTime, taxInvoiceForm.creationDateTime);
         assertEquals(this.subject, taxInvoiceForm.subject);
         assertEquals(this.content, taxInvoiceForm.content);
     }

@@ -13,7 +13,6 @@ public class TaxInvoiceForm {
     public String purpose;
     public String purposeCode;
     public String globalID;
-    public Timestamp creationDateTime;
     public String subject;
     public String content;
 
@@ -27,7 +26,6 @@ public class TaxInvoiceForm {
                           String purpose,
                           String purposeCode,
                           String globalID,
-                          Timestamp creationDateTime,
                           String subject,
                           String content) {
         this.id = id;
@@ -37,7 +35,6 @@ public class TaxInvoiceForm {
         this.purpose = purpose;
         this.purposeCode = purposeCode;
         this.globalID = globalID;
-        this.creationDateTime = creationDateTime;
         this.subject = subject;
         this.content = content;
     }
