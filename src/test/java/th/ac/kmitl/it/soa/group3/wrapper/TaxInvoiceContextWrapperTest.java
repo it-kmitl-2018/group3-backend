@@ -10,7 +10,7 @@ class TaxInvoiceContextWrapperTest {
 
     private String id = "AER123";
     private TaxInvoiceContextWrapper wrapper = TaxInvoiceContextWrapper.builder()
-            .guidelineDocumentId(this.id)
+            .contextId(this.id)
             .build();
 
     @Test

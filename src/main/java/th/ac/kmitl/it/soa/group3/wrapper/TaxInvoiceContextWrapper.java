@@ -7,19 +7,19 @@ import th.ac.kmitl.it.soa.group3.model.taxinvoicecontext.TaxInvoiceContextSpecMo
 @Builder(builderClassName = "builder")
 public class TaxInvoiceContextWrapper {
 
-    public String guidelineDocumentId;
+    public String contextId;
 
     public TaxInvoiceContextWrapper() {
     }
 
-    public TaxInvoiceContextWrapper(String guidelineDocumentId) {
-        this.guidelineDocumentId = guidelineDocumentId;
+    public TaxInvoiceContextWrapper(String contextId) {
+        this.contextId = contextId;
     }
 
     public TaxInvoiceContextModel getModel() {
         TaxInvoiceContextSpecModel contextParameterModel =
                 TaxInvoiceContextSpecModel.builder()
-                .id(this.guidelineDocumentId)
+                .id(this.contextId)
                 .build();
 
         TaxInvoiceContextModel documentContextModel =
