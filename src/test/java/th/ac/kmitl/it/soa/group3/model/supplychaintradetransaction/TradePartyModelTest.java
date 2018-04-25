@@ -1,8 +1,12 @@
 package th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.google.gson.Gson;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class TradePartyModelTest {
 
@@ -89,5 +93,41 @@ public class TradePartyModelTest {
         assertEquals(this.specifiedTaxRegistration, tradeParty.specifiedTaxRegistration);
         assertEquals(this.definedTradeContact, tradeParty.definedTradeContact);
         assertEquals(this.postalTradeAddress, tradeParty.postalTradeAddress);
+    }
+
+    @Test
+    public void itShouldGetXMLString() throws JsonProcessingException {
+        TradePartyModel.Builder builder =  new TradePartyModel.Builder();
+        TradePartyModel tradeParty = builder
+                .id(this.id)
+                .globalID(this.globalID)
+                .name(this.name)
+                .specifiedTaxRegistration(this.specifiedTaxRegistration)
+                .definedTradeContact(this.definedTradeContact)
+                .postalTradeAddress(this.postalTradeAddress)
+                .build();
+
+        XmlMapper xmlMapper = new XmlMapper();
+        String xml = xmlMapper.writeValueAsString(tradeParty);
+
+        assertNotNull(xml);
+    }
+
+    @Test
+    public void itShouldGetJSONString() {
+        TradePartyModel.Builder builder =  new TradePartyModel.Builder();
+        TradePartyModel tradeParty = builder
+                .id(this.id)
+                .globalID(this.globalID)
+                .name(this.name)
+                .specifiedTaxRegistration(this.specifiedTaxRegistration)
+                .definedTradeContact(this.definedTradeContact)
+                .postalTradeAddress(this.postalTradeAddress)
+                .build();
+
+        Gson gson = new Gson();
+        String json = gson.toJson(tradeParty);
+
+        assertNotNull(json);
     }
 }
