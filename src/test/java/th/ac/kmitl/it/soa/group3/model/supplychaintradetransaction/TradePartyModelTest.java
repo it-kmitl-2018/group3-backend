@@ -113,21 +113,4 @@ public class TradePartyModelTest {
         assertNotNull(xml);
     }
 
-    @Test
-    public void itShouldGetJSONString() {
-        TradePartyModel.Builder builder =  new TradePartyModel.Builder();
-        TradePartyModel tradeParty = builder
-                .id(this.id)
-                .globalID(this.globalID)
-                .name(this.name)
-                .specifiedTaxRegistration(this.specifiedTaxRegistration)
-                .definedTradeContact(this.definedTradeContact)
-                .postalTradeAddress(this.postalTradeAddress)
-                .build();
-
-        Gson gson = new Gson();
-        String json = gson.toJson(tradeParty);
-
-        assertNotNull(json);
-    }
 }

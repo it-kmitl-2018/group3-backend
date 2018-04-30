@@ -32,11 +32,4 @@ public class SpecifiedTaxRegistrationModelTest {
         assertNotNull(xml);
     }
 
-    @Test
-    public void itShouldGetJSONString() {
-        Gson gson = new Gson();
-        String json = gson.toJson(this.specTaxRegister);
-
-        assertNotNull(json);
-    }
 }
