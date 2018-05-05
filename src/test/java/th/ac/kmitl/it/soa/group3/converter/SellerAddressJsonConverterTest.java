@@ -1,5 +1,8 @@
 package th.ac.kmitl.it.soa.group3.converter;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import org.junit.jupiter.api.Test;
 import th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction.PostalTradeAddressModel;
 
@@ -40,10 +43,15 @@ class SellerAddressJsonConverterTest {
 
 
     @Test
-    public void itShouldGetCorrectJsonString() {
+    public void itShouldGetCorrectJsonString() throws JsonProcessingException {
 
         SellerAddressJsonConverter addressJsonConverter = new SellerAddressJsonConverter(postalTradeAddressModel);
-        assertNotNull(addressJsonConverter.getJsonString());
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
+        String result = mapper.writeValueAsString(addressJsonConverter);
+
+        assertNotNull(result);
     }
 
 }
