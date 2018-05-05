@@ -12,12 +12,6 @@ public class SellerJsonConverter {
     @JsonProperty("tax_number")
     private String taxNumber;
 
-    @JsonProperty("branch_number")
-    private String branchNumber;
-
-    @JsonProperty("name_en")
-    private String nameEn;
-
     @JsonProperty("name_th")
     private String nameTh;
 
@@ -26,9 +20,6 @@ public class SellerJsonConverter {
 
     @JsonProperty("telephone")
     private String telephoneNumber;
-
-    @JsonProperty("fax")
-    private String faxNumber;
 
     @JsonProperty("address")
     private SellerAddressJsonConverter addressJsonConverter;
