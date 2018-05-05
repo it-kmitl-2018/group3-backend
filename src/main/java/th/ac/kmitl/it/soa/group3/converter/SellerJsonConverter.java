@@ -30,11 +30,15 @@ public class SellerJsonConverter {
     @JsonProperty("fax")
     private String faxNumber;
 
+    @JsonProperty("address")
+    private SellerAddressJsonConverter addressJsonConverter;
+
     public SellerJsonConverter(TradePartyModel tradePartyModel) {
-        taxNumber = tradePartyModel.specifiedTaxRegistration.id;
-        nameTh = tradePartyModel.name;
-        email = tradePartyModel.definedTradeContact.emailUriUniversalCommunicationModel.uriID;
-        telephoneNumber = tradePartyModel.definedTradeContact.telephoneUniversalCommunicationModel.phoneNumber;
+        this.taxNumber = tradePartyModel.specifiedTaxRegistration.id;
+        this.nameTh = tradePartyModel.name;
+        this.email = tradePartyModel.definedTradeContact.emailUriUniversalCommunicationModel.uriID;
+        this.telephoneNumber = tradePartyModel.definedTradeContact.telephoneUniversalCommunicationModel.phoneNumber;
+        this.addressJsonConverter = new SellerAddressJsonConverter(tradePartyModel.postalTradeAddress);
     }
 
     public String getJsonString() {
