@@ -43,7 +43,6 @@ class SellerAddressJsonConverterTest {
     public void itShouldGetCorrectJsonString() {
 
         SellerAddressJsonConverter addressJsonConverter = new SellerAddressJsonConverter(postalTradeAddressModel);
-        System.out.println(addressJsonConverter.getJsonString());
         assertNotNull(addressJsonConverter.getJsonString());
     }
 
