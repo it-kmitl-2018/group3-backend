@@ -1,11 +1,13 @@
 package th.ac.kmitl.it.soa.group3.converter;
 
-import com.fasterxml.jackson.annotation.JsonClassDescription;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.google.gson.Gson;
 import th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction.PostalTradeAddressModel;
 
-@JsonClassDescription("address")
+@JsonRootName("address")
 public class SellerAddressJsonConverter {
 
     @JsonProperty("line_one")
@@ -45,12 +47,6 @@ public class SellerAddressJsonConverter {
         this.postCode = postalTradeAddressModel.postCode;
         this.countrySubDivision = postalTradeAddressModel.countrySubDivisionID;
         this.countryName = postalTradeAddressModel.countryID;
-    }
-
-    public String getJsonString() {
-        Gson gson = new Gson();
-        String json = gson.toJson(this);
-        return json;
     }
 
 }
