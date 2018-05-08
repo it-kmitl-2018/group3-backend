@@ -1,14 +1,15 @@
-package th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction;
+package th.ac.kmitl.it.soa.group3.converter;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.google.gson.Gson;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import org.junit.Before;
-import org.junit.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.jupiter.api.Test;
+import th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction.*;
 
-public class TradePartyModelTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class SellerJsonConverterTest {
 
     private String id = "ABCDEFGHIJKLMNOPQRST123456789012345";
     private String globalID = "ABCDEFGHIJKLMNOPQRST123456789012345";
@@ -36,29 +37,31 @@ public class TradePartyModelTest {
     private PostalTradeAddressModel postalTradeAddress;
     private EmailUriUniversalCommunicationModel emailUriUniversal;
     private TelephoneUniversalCommunicationModel telephoneUniversal;
+    private TradePartyModel tradePartyModel;
 
-    @Before
-    public void beforeEachTest() {
-        this.specifiedTaxRegistration = new SpecifiedTaxRegistrationModel.Builder()
+    @Test
+    public void itShouldGetJsonString() throws JsonProcessingException {
+
+        this.specifiedTaxRegistration = SpecifiedTaxRegistrationModel.builder()
                 .id(this.taxID)
                 .build();
 
-        this.emailUriUniversal = new EmailUriUniversalCommunicationModel.Builder()
+        this.emailUriUniversal = EmailUriUniversalCommunicationModel.builder()
                 .uriID(this.email)
                 .build();
 
-        this.telephoneUniversal = new TelephoneUniversalCommunicationModel.Builder()
+        this.telephoneUniversal = TelephoneUniversalCommunicationModel.builder()
                 .phoneNumber(this.phoneNo)
                 .build();
 
-        this.definedTradeContact = new DefinedTradeContactModel.Builder()
+        this.definedTradeContact = DefinedTradeContactModel.builder()
                 .personName(this.personName)
                 .departmentName(this.departmentName)
                 .emailUriUniversalCommunicationModel(this.emailUriUniversal)
                 .telephoneUniversalCommunicationModel(this.telephoneUniversal)
                 .build();
 
-        this.postalTradeAddress = new PostalTradeAddressModel.Builder()
+        this.postalTradeAddress = PostalTradeAddressModel.builder()
                 .postCode(this.postCode)
                 .buildingName(this.buildingName)
                 .houseNumber(this.houseNumber)
@@ -73,12 +76,9 @@ public class TradePartyModelTest {
                 .countrySubDivisionID(this.countrySubDivisionID)
                 .buildingNumber(this.buildingNumber)
                 .build();
-    }
 
-    @Test
-    public void itShouldGetAllInfoByGetter() {
-        TradePartyModel.Builder builder =  new TradePartyModel.Builder();
-        TradePartyModel tradeParty = builder
+        TradePartyModel.Builder builder = TradePartyModel.builder();
+        this.tradePartyModel = builder
                 .id(this.id)
                 .globalID(this.globalID)
                 .name(this.name)
@@ -87,30 +87,12 @@ public class TradePartyModelTest {
                 .postalTradeAddress(this.postalTradeAddress)
                 .build();
 
-        assertEquals(this.id, tradeParty.id);
-        assertEquals(this.globalID, tradeParty.globalID);
-        assertEquals(this.name, tradeParty.name);
-        assertEquals(this.specifiedTaxRegistration, tradeParty.specifiedTaxRegistration);
-        assertEquals(this.definedTradeContact, tradeParty.definedTradeContact);
-        assertEquals(this.postalTradeAddress, tradeParty.postalTradeAddress);
+        SellerJsonConverter sellerJsonConverter = new SellerJsonConverter(tradePartyModel);
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
+        String result = mapper.writeValueAsString(sellerJsonConverter);
+        System.out.println(result);
+        assertNotNull(result);
     }
-
-    @Test
-    public void itShouldGetXMLString() throws JsonProcessingException {
-        TradePartyModel.Builder builder =  new TradePartyModel.Builder();
-        TradePartyModel tradeParty = builder
-                .id(this.id)
-                .globalID(this.globalID)
-                .name(this.name)
-                .specifiedTaxRegistration(this.specifiedTaxRegistration)
-                .definedTradeContact(this.definedTradeContact)
-                .postalTradeAddress(this.postalTradeAddress)
-                .build();
-
-        XmlMapper xmlMapper = new XmlMapper();
-        String xml = xmlMapper.writeValueAsString(tradeParty);
-
-        assertNotNull(xml);
-    }
-
 }
