@@ -8,8 +8,13 @@ import th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction.GrossPricePro
 import th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction.SpecifiedLineTradeDeliveryModel;
 import th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction.SpecifiedTradeProductModel;
 import th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction.TradeTaxModel;
+
+import java.io.IOException;
 import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ItemJsonConverterTest {
 
@@ -22,6 +27,8 @@ public class ItemJsonConverterTest {
     private SpecifiedLineTradeDeliveryModel lineTradeDelivery;
     private TradeTaxModel tradeTax;
     private ArrayList<ItemJsonConverter> items = new ArrayList<>();
+
+    private String expectedJson = "{\"ArrayList\":[{\"description\":\"Toyota Fortuner 3.0V AT 2014 TRD สีเทา ดีเซล 3,000 cc. เกียร์ออโต้\",\"quantity\":1,\"price_per_item\":3990000.0,\"have_vat\":true,\"vat_rate\":0.07}]}";
 
     @Test
     public void itShouldGetCorrectJsonString() throws JsonProcessingException {
@@ -51,8 +58,20 @@ public class ItemJsonConverterTest {
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
         String result = mapper.writeValueAsString(items);
-        System.out.println(result);
+        result = result.trim().replaceAll("\n", "");
 
         assertNotNull(result);
+        assertTrue(isJSONValid(result));
+        assertEquals(result, expectedJson);
+    }
+
+    public static boolean isJSONValid(String jsonInString ) {
+        try {
+            final ObjectMapper mapper = new ObjectMapper();
+            mapper.readTree(jsonInString);
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
     }
 }
