@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SellerAddressJsonConverterTest {
+class AddressJsonConverterTest {
 
     private String postCode = "10250";
     private String buildingName = "PrachasukCondoTown";
@@ -49,7 +49,7 @@ class SellerAddressJsonConverterTest {
     @Test
     public void itShouldGetCorrectJsonString() throws JsonProcessingException {
 
-        SellerAddressJsonConverter addressJsonConverter = new SellerAddressJsonConverter(postalTradeAddressModel);
+        AddressJsonConverter addressJsonConverter = new AddressJsonConverter(postalTradeAddressModel);
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.WRAP_ROOT_VALUE);

@@ -8,7 +8,7 @@ import com.google.gson.Gson;
 import th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction.PostalTradeAddressModel;
 
 @JsonRootName("address")
-public class SellerAddressJsonConverter {
+public class AddressJsonConverter {
 
     @JsonProperty("line_one")
     private String lineOne;
@@ -32,7 +32,7 @@ public class SellerAddressJsonConverter {
     private String countryName;
 
 
-    public SellerAddressJsonConverter(PostalTradeAddressModel postalTradeAddressModel) {
+    public AddressJsonConverter(PostalTradeAddressModel postalTradeAddressModel) {
         this.lineOne = postalTradeAddressModel.houseNumber + " "
                 + postalTradeAddressModel.moo + " "
                 + postalTradeAddressModel.soi + " "
