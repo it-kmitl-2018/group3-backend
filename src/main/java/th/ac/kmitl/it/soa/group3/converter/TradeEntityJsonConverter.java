@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 import th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction.TradePartyModel;
 
 @JsonRootName("seller")
-public class SellerJsonConverter {
+public class TradeEntityJsonConverter {
 
     @JsonProperty("tax_number")
     private String taxNumber;
@@ -21,7 +21,7 @@ public class SellerJsonConverter {
     @JsonProperty("address")
     private AddressJsonConverter addressJsonConverter;
 
-    public SellerJsonConverter(TradePartyModel tradePartyModel) {
+    public TradeEntityJsonConverter(TradePartyModel tradePartyModel) {
         this.taxNumber = tradePartyModel.specifiedTaxRegistration.id;
         this.nameTh = tradePartyModel.name;
         this.email = tradePartyModel.definedTradeContact.emailUriUniversalCommunicationModel.uriID;

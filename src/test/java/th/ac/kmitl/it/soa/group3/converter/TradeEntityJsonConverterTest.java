@@ -3,7 +3,6 @@ package th.ac.kmitl.it.soa.group3.converter;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction.*;
 
@@ -11,7 +10,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SellerJsonConverterTest {
+class TradeEntityJsonConverterTest {
 
     private String id = "ABCDEFGHIJKLMNOPQRST123456789012345";
     private String globalID = "ABCDEFGHIJKLMNOPQRST123456789012345";
@@ -91,7 +90,7 @@ class SellerJsonConverterTest {
                 .postalTradeAddress(this.postalTradeAddress)
                 .build();
 
-        SellerJsonConverter sellerJsonConverter = new SellerJsonConverter(tradePartyModel);
+        TradeEntityJsonConverter sellerJsonConverter = new TradeEntityJsonConverter(tradePartyModel);
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
