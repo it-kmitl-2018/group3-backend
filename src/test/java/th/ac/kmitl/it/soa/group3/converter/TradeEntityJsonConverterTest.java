@@ -40,7 +40,7 @@ class TradeEntityJsonConverterTest {
     private TelephoneUniversalCommunicationModel telephoneUniversal;
     private TradePartyModel tradePartyModel;
 
-    private String expectedJson = "{\"seller\":{\"tax_number\":\"123456789012300000\",\"name_th\":\"บริษัทร่วมสมยัธุรกรรมอิเล็กทรอนิกส์จำกัด\",\"email\":\"example@mail.com\",\"telephone\":\"(+66) 89-1234567\",\"address\":{\"line_one\":\"99/2546 16 Nakkeeralamthong Krungthepkritha Nakkeera\",\"line_two\":\"PrachasukCondoTown 3/34\",\"city_name\":\"Sapansoong\",\"city_sub_division_name\":\"Sapansoong\",\"post_code\":\"10250\",\"country_sub_division\":\"10\",\"country_name\":\"TH\"}}}";
+    private String expectedJson = "{\"tax_number\":\"123456789012300000\",\"name_th\":\"บริษัทร่วมสมยัธุรกรรมอิเล็กทรอนิกส์จำกัด\",\"email\":\"example@mail.com\",\"telephone\":\"(+66) 89-1234567\",\"address\":{\"line_one\":\"99/2546 16 Nakkeeralamthong Krungthepkritha Nakkeera\",\"line_two\":\"PrachasukCondoTown 3/34\",\"city_name\":\"Sapansoong\",\"city_sub_division_name\":\"Sapansoong\",\"post_code\":\"10250\",\"country_sub_division\":\"10\",\"country_name\":\"TH\"}}";
 
     @Test
     public void itShouldGetJsonString() throws JsonProcessingException {
@@ -93,7 +93,6 @@ class TradeEntityJsonConverterTest {
         TradeEntityJsonConverter sellerJsonConverter = new TradeEntityJsonConverter(tradePartyModel);
 
         ObjectMapper mapper = new ObjectMapper();
-        mapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
         String result = mapper.writeValueAsString(sellerJsonConverter);
         System.out.println(result);
         result = result.trim().replaceAll("\n", "");
