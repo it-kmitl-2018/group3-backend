@@ -5,6 +5,7 @@ import lombok.Builder;
 import th.ac.kmitl.it.soa.group3.converter.ItemJsonConverter;
 import th.ac.kmitl.it.soa.group3.converter.TradeEntityJsonConverter;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 @Builder(builderClassName = "builder")
@@ -20,9 +21,9 @@ public class JsonExportWrapper {
     public TradeEntityJsonConverter buyer;
 
     @JsonProperty("transaction_date")
-    public Date transactionDate;
+    public String transactionDate;
 
     @JsonProperty("items")
-    public ItemJsonConverter items;
+    public ArrayList<ItemJsonConverter> items;
 
 }
