@@ -3,7 +3,6 @@ package th.ac.kmitl.it.soa.group3.converter;
 import com.fasterxml.jackson.annotation.*;
 import th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction.TradePartyModel;
 
-@JsonRootName("seller")
 public class TradeEntityJsonConverter {
 
     @JsonProperty("tax_number")
