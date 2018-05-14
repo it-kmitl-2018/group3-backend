@@ -1,10 +1,8 @@
-package th.ac.kmitl.it.soa.group3.wrapper;
+package th.ac.kmitl.it.soa.group3.converter;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import th.ac.kmitl.it.soa.group3.converter.ItemJsonConverter;
-import th.ac.kmitl.it.soa.group3.converter.TradeEntityJsonConverter;
 import th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction.*;
 
 import java.io.IOException;
@@ -12,7 +10,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class JsonExportWrapperTest {
+class JsonExportConverterTest {
 
     private String id = "ABCDEFGHIJKLMNOPQRST123456789012345";
     private String globalID = "ABCDEFGHIJKLMNOPQRST123456789012345";
@@ -140,7 +138,7 @@ class JsonExportWrapperTest {
         items.add(itemJsonConverter);
 
 
-        JsonExportWrapper jsonExportWrapper = JsonExportWrapper.builder()
+        JsonExportConverter jsonExportConverter = JsonExportConverter.builder()
                 .buyer(buyerJsonConverter)
                 .seller(sellerJsonConverter)
                 .serialNumber("AEFF15745")
@@ -149,7 +147,7 @@ class JsonExportWrapperTest {
                 .build();
 
         ObjectMapper mapper = new ObjectMapper();
-        String result = mapper.writeValueAsString(jsonExportWrapper);
+        String result = mapper.writeValueAsString(jsonExportConverter);
         System.out.println(result);
         result = result.trim().replaceAll("\n", "");
 

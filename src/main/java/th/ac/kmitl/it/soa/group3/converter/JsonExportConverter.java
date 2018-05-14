@@ -1,4 +1,4 @@
-package th.ac.kmitl.it.soa.group3.wrapper;
+package th.ac.kmitl.it.soa.group3.converter;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 @Builder(builderClassName = "builder")
-public class JsonExportWrapper {
+public class JsonExportConverter {
 
     @JsonProperty("number")
     public String serialNumber;
