@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.google.gson.Gson;
 import th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction.PostalTradeAddressModel;
 
 @JsonRootName("address")

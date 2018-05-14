@@ -2,7 +2,6 @@ package th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.google.gson.Gson;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;

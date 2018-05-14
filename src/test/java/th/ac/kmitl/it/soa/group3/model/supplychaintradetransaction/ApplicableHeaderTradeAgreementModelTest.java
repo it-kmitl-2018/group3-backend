@@ -1,5 +1,7 @@
 package th.ac.kmitl.it.soa.group3.model.supplychaintradetransaction;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.junit.Before;
 import org.junit.Test;
 import java.sql.Timestamp;
@@ -41,8 +43,88 @@ public class ApplicableHeaderTradeAgreementModelTest {
     private BuyerOrderReferencedReferencedDocumentModel additionalRefDoc;
     private String deliveryTypeCode = "DDP";
     private String issueAssignedID = "ABC1254";
-    private Timestamp issueDateTime = new Timestamp(System.currentTimeMillis());
+    private Timestamp issueDateTime = new Timestamp(1526199902438l);
     private TypeCode referenceTypeCode = TypeCode.RECEIPT;
+    private ApplicableHeaderTradeAgreementModel headerTradeAgreement;
+    private String expectedXML = "<rsm:ApplicableHeaderTradeAgreement>" +
+            "<ram:SellerTradeParty>" +
+            "<ram:ID>ABCDEFGHIJKLMNOPQRST123456789012345</ram:ID>" +
+            "<ram:GlobalID>ABCDEFGHIJKLMNOPQRST123456789012345</ram:GlobalID>" +
+            "<ram:Name>บริษัทร่วมสมยัธุรกรรมอิเล็กทรอนิกส์จำกัด</ram:Name>" +
+            "<ram:SpecifiedTaxRegistration>" +
+            "<ram:ID>123456789012300000</ram:ID>" +
+            "</ram:SpecifiedTaxRegistration>" +
+            "<ram:DefinedTradeContact>" +
+            "<personName>Alice</personName>" +
+            "<departmentName>Accounting</departmentName>" +
+            "<emailUriUniversalCommunicationModel>" +
+            "<uriID>example@mail.com</uriID>" +
+            "</emailUriUniversalCommunicationModel>" +
+            "<telephoneUniversalCommunicationModel>" +
+            "<phoneNumber>(+66) 89-1234567</phoneNumber>" +
+            "</telephoneUniversalCommunicationModel>" +
+            "</ram:DefinedTradeContact>" +
+            "<ram:PostalTradeAddress>" +
+            "<ram:PostcodeCode>10250</ram:PostcodeCode>" +
+            "<ram:BuildingName>PrachasukCondoTown</ram:BuildingName>" +
+            "<ram:LineOne>99/2546</ram:LineOne>" +
+            "<ram:LineTwo>Room 828 8th Floor</ram:LineTwo>" +
+            "<ram:LineThree>Nakkeeralamthong</ram:LineThree>" +
+            "<ram:LineFour>Nakkeera</ram:LineFour>" +
+            "<ram:LineFive>16</ram:LineFive>" +
+            "<ram:StreetName>Krungthepkritha</ram:StreetName>" +
+            "<ram:CityName>Sapansoong</ram:CityName>" +
+            "<ram:CitySubDivisionName>Sapansoong</ram:CitySubDivisionName>" +
+            "<ram:CountryID>TH</ram:CountryID>" +
+            "<ram:CountrySubDivisionID>10</ram:CountrySubDivisionID>" +
+            "<ram:BuildingNumber>3/34</ram:BuildingNumber>" +
+            "</ram:PostalTradeAddress>" +
+            "</ram:SellerTradeParty>" +
+            "<ram:BuyerTradeParty>" +
+            "<ram:ID>ABCDEFGHIJKLMNOPQRST123456789012345</ram:ID>" +
+            "<ram:GlobalID>ABCDEFGHIJKLMNOPQRST123456789012345</ram:GlobalID>" +
+            "<ram:Name>บริษัทร่วมสมยัธุรกรรมอิเล็กทรอนิกส์จำกัด</ram:Name>" +
+            "<ram:SpecifiedTaxRegistration>" +
+            "<ram:ID>123456789012300000</ram:ID>" +
+            "</ram:SpecifiedTaxRegistration>" +
+            "<ram:DefinedTradeContact>" +
+            "<personName>Alice</personName>" +
+            "<departmentName>Accounting</departmentName>" +
+            "<emailUriUniversalCommunicationModel>" +
+            "<uriID>example@mail.com</uriID>" +
+            "</emailUriUniversalCommunicationModel>" +
+            "<telephoneUniversalCommunicationModel>" +
+            "<phoneNumber>(+66) 89-1234567</phoneNumber>" +
+            "</telephoneUniversalCommunicationModel>" +
+            "</ram:DefinedTradeContact>" +
+            "<ram:PostalTradeAddress>" +
+            "<ram:PostcodeCode>10250</ram:PostcodeCode>" +
+            "<ram:BuildingName>PrachasukCondoTown</ram:BuildingName>" +
+            "<ram:LineOne>99/2546</ram:LineOne>" +
+            "<ram:LineTwo>Room 828 8th Floor</ram:LineTwo>" +
+            "<ram:LineThree>Nakkeeralamthong</ram:LineThree>" +
+            "<ram:LineFour>Nakkeera</ram:LineFour>" +
+            "<ram:LineFive>16</ram:LineFive>" +
+            "<ram:StreetName>Krungthepkritha</ram:StreetName>" +
+            "<ram:CityName>Sapansoong</ram:CityName>" +
+            "<ram:CitySubDivisionName>Sapansoong</ram:CitySubDivisionName>" +
+            "<ram:CountryID>TH</ram:CountryID>" +
+            "<ram:CountrySubDivisionID>10</ram:CountrySubDivisionID>" +
+            "<ram:BuildingNumber>3/34</ram:BuildingNumber>" +
+            "</ram:PostalTradeAddress>" +
+            "</ram:BuyerTradeParty>" +
+            "<ram:ApplicableTradeDeliveryTerms/>" +
+            "<ram:BuyerOrderReferencedReferencedDocument>" +
+            "<ram:IssuerAssignedID>ABC1254</ram:IssuerAssignedID>" +
+            "<ram:IssueDateTime>1526199902438</ram:IssueDateTime>" +
+            "<ram:ReferenceTypeCode>RECEIPT</ram:ReferenceTypeCode>" +
+            "</ram:BuyerOrderReferencedReferencedDocument>" +
+            "<ram:AdditionalReferencedDocument>" +
+            "<ram:IssuerAssignedID>ABC1254</ram:IssuerAssignedID>" +
+            "<ram:IssueDateTime>1526199902438</ram:IssueDateTime>" +
+            "<ram:ReferenceTypeCode>RECEIPT</ram:ReferenceTypeCode>" +
+            "</ram:AdditionalReferencedDocument>" +
+            "</rsm:ApplicableHeaderTradeAgreement>";
 
     @Before
     public void beforeEachTest() {
@@ -114,21 +196,28 @@ public class ApplicableHeaderTradeAgreementModelTest {
                 .issueDateTime(this.issueDateTime)
                 .referenceTypeCode(this.referenceTypeCode)
                 .build();
-    }
 
-    @Test
-    public void itShouldGetAllInfoByGetter() {
-
-        ApplicableHeaderTradeAgreementModel headerTradeAgreement = new ApplicableHeaderTradeAgreementModel.Builder()
+        this.headerTradeAgreement = new ApplicableHeaderTradeAgreementModel.Builder()
                 .buyerTradeParty(this.buyerTradeParty)
                 .sellerTradeParty(this.sellerTradeParty)
                 .buyerOrderReferencedReferencedDocument(this.buyerOrderRefDoc)
                 .additionalReferencedDocument(this.additionalRefDoc)
                 .build();
+    }
 
-        assertEquals(this.buyerTradeParty, headerTradeAgreement.buyerTradeParty);
-        assertEquals(this.sellerTradeParty, headerTradeAgreement.sellerTradeParty);
-        assertEquals(this.buyerOrderRefDoc, headerTradeAgreement.buyerOrderReferencedReferencedDocument);
-        assertEquals(this.additionalRefDoc, headerTradeAgreement.additionalReferencedDocument);
+    @Test
+    public void itShouldGetAllInfoByGetter() {
+        assertEquals(this.buyerTradeParty, this.headerTradeAgreement.buyerTradeParty);
+        assertEquals(this.sellerTradeParty, this.headerTradeAgreement.sellerTradeParty);
+        assertEquals(this.buyerOrderRefDoc, this.headerTradeAgreement.buyerOrderReferencedReferencedDocument);
+        assertEquals(this.additionalRefDoc, this.headerTradeAgreement.additionalReferencedDocument);
+    }
+
+    @Test
+    public void itShouldGetXMLString() throws JsonProcessingException {
+        XmlMapper xmlMapper = new XmlMapper();
+        String xml = xmlMapper.writeValueAsString(this.headerTradeAgreement);
+
+        assertEquals(this.expectedXML, xml);
     }
 }
